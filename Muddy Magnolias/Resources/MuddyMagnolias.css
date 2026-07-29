@@ -27,6 +27,8 @@ h2 {
   font-size: 3rem;
 }
 
+/* Header */
+
 header {  
   display: flex;
   justify-content: space-around;
@@ -58,6 +60,8 @@ padding: 0 20%;
   justify-content: center;
   font-family: 'Verdana';
 }
+
+/* all pages but homepage */
 
 main {
   display: flex;
@@ -133,6 +137,8 @@ main {
   padding: 10px;
 }
 
+/* vendor page */
+
 .leftVendors {
   display: flex;
   justify-content: center;
@@ -173,6 +179,13 @@ main {
   justify-content: center;
   gap: 20px;
   padding: 20px;
+}
+
+/* mini nav bar for the item pages */
+.itemsNav {
+  display: flex;
+  gap: 10%;
+  
 }
 
 /*the individual boxes for each picture*/
@@ -478,5 +491,9 @@ footer td, .rightFooter p {
   "DraconicEndeavorsInfo";
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(2, 1fr);
+}
+
+.itemsNav {
+  flex-direction: column;
 }
 }
