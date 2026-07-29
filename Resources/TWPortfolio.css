@@ -1,0 +1,158 @@
+/*Colors
+light blue hsl(207.61, 56.78%, 39.02%)
+gold hsl(36.43, 56%, 39.22%)
+dark blue hsl(207.91, 30.5%, 27.65%)
+brown hsl(36.43, 24.56%, 22.35%)
+really dark blue hsl(207.27, 12.09%, 17.84%)
+*/
+html {
+    background-color: hsl(36.43, 46%, 92%);
+}
+
+header {
+    display:flex;
+    justify-content:center;
+    margin: 1rem;
+    flex-direction: column;
+}
+
+header h1 {
+    display: flex;
+    justify-content:center;
+    margin: 1rem;
+    letter-spacing: .3rem;
+    font-size:3.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: hsl(207.91, 30.5%, 27.65%);
+    border-radius: 10px;
+}
+
+/* home page layout */
+
+.homePage {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    gap: 30px;
+}
+
+a {
+    margin: 0;
+}
+
+.description {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.words ul {
+    list-style-type: none;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: hsl(207.91, 30.5%, 27.65%);
+    border-radius: 10px;
+}
+
+.skillBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+    padding: 0 .5rem;
+}
+
+.skillBox h3 {
+    margin: 0;
+}
+
+.skillBox ul {
+    padding-left: 1rem;
+    color: #ddd;
+    list-style-type: disc;
+    margin: .5rem;
+}
+
+/* other page layouts */
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.about, .contact {
+    margin: 2rem;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Colors & Styles */
+h1 {font-size: 3rem;}
+
+h2 {font-size: 2rem;}
+
+h3 {font-size: 1.5rem;}
+
+h1, h2 {
+    color: hsl(207.61, 56.78%, 39.02%);
+    font-family:'Trebuchet MS';
+}
+
+h3 {
+    color: hsl(36.43, 56%, 39.22%);
+    margin: .5rem;
+    font-family:'Trebuchet MS';
+}
+
+p, ul {
+    font-size: 1.5rem;
+    color: hsl(36.43, 24.56%, 22.35%);
+    font-family:'Garamond';
+}
+
+main ul {
+    list-style-type:circle;
+}
+
+nav a, a:visited {
+    color: #ddd;
+    font-size: 1.5rem;
+}
+
+main a, main a:visited {
+    color:hsl(207.91, 30.5%, 27.65%);
+}
+
+a:hover {
+    border: 1px solid hsl(36.43, 56%, 39.22%);
+    border-radius: 8%;
+}
+
+/* responsiveness based on screen sizes */
+@media (max-width: 768px) {
+    header, nav, .homePage {
+        flex-direction: column;
+    }
+
+    header {
+        margin: 1rem;
+    }
+
+    nav {
+        align-items: center;
+        gap:.1rem;
+    }
+
+    nav h2 {
+        margin: .5rem;
+    }
+}

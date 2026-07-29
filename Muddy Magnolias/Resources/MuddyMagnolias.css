@@ -1,0 +1,482 @@
+/* Colors:
+teal: #18A2B7 hsl(188, 77%, 41%)
+#2C7985 hsl(188, 50%, 35%)
+#2B4C52 hsl(188, 31%, 25%)
+
+torquoise: #18B898 hsl(168, 77%, 41%)
+blue: #1870B8 hsl(207, 77%, 41%)
+pink: #B81865 hsl(331, 77%, 41%)
+*/
+html {
+  font-size: 16px;
+}
+
+h1 {
+  display: flex;
+  color: hsl(188, 77%, 41%);
+  padding: 20px;
+  justify-content: flex-start;
+  text-align: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+h2 {
+  display: flex;
+  color: hsl(188, 77%, 41%);
+  font-size: 3rem;
+}
+
+header {  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: auto;
+/*  border-bottom: 1px solid hsl(331, 77%, 41%); */
+background-color: hsl(168, 77%, 91%);
+padding: 0 20%;
+}
+
+/* Mud Mag logo in top center */
+.logo img {
+  width: 240px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.navigation1, .navigation2, ul{
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  color: black;
+  font-size: 2rem;
+  justify-content: center;
+  font-family: 'Verdana';
+}
+
+main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.homePage {
+  display: grid;
+  grid-template-areas: "topLeft topRight"
+  "bottomLeft bottomCenter bottomRight";
+  width: 100%;
+  position: relative;
+  margin: auto;
+  gap: 0;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  align-items: center;
+}
+
+.topLeft, .topRight{
+  grid-column: span 3;
+  grid-row: span 5;
+}
+
+.bottomLeft, .bottomCenter, .bottomRight {
+  grid-column: span 2;
+  grid-row: span 5;
+}
+
+.topLeft {
+  padding: 10px;
+}
+
+/* store image on home page */
+#MudMagStore {
+  width: 400px;
+  height: 380px;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 1;
+  justify-content: center;
+  border-radius: 35%;
+  clip-path: inset(10px);
+  /*
+  filter: brightness(80%);
+  filter: saturate(50%);
+  filter: contrast(80%);
+ */
+}
+
+.topRight {
+  background-color: hsl(331, 77%, 98%);
+  color: hsl(168, 77%, 31%);
+}
+
+.openHours {
+  font-family: 'Brush Script MT';
+  font-size: 4rem;
+}
+
+.numberOfVendors {
+  font-family: 'Georgia';
+  font-size: 3rem;
+}
+
+.bottomLeft img, .bottomCenter img, .bottomRight img {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.leftVendors {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 300px;
+  z-index: 2;
+  align-items: center;
+}
+
+.rightVendors {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 50%;
+  height: auto;
+  z-index: 2;
+}
+
+.parent-container {
+  display: flex;
+  gap: 20px;
+}
+
+/*the box containing the pictures*/
+.title {
+  margin-top: 0px;
+  font-size: 1.5rem;
+/*  border-bottom: 2px solid hsl(188, 77%, 41%); */
+  padding-bottom: 5px;
+  width: 100%;  
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/*the individual boxes for each picture*/
+.wood1, .new1, .WiseOwl {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 420px;
+  margin: 0;
+  padding: 10px;
+}
+
+/*the pictures themselves*/
+.wood1 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/*caption for each picture*/
+.wood1 figcaption {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+/*image carousel*/
+* {
+  box-sizing:border-box;
+}
+.carousel-container {
+  max-width:800px;
+  min-height: 500px;
+  position: relative;
+  margin: auto;
+  width: 100%;
+}
+
+.dot {
+  text-align: center;
+}
+
+.myImages {
+  display: none;
+  object-fit: cover;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: fit-content;
+  text-align: center;
+  background-color: hsl(207, 77%, 21%, .5);
+  left:50%;
+  translate: -50%;
+}
+
+.numberText {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.carousel {
+  animation-name:fade;
+  animation-duration: 1.5s;
+}
+
+/* Contact Page */
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contactLeft, .contactRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactRight {
+  text-align:center;
+  align-items: center;
+  height: auto;
+}
+
+.about {
+  padding: 10px;
+}
+
+.about p {
+  text-align: start;
+  font-size: 2rem;
+}
+
+.about ul{
+  flex-direction: column;
+  text-align:start;
+}
+
+/* Booths */
+.booths {
+  display: grid;
+  grid-template-areas: "DraconicEndeavors DraconicEndeavorsInfo";
+  width: 100%;
+  position: relative;
+  margin: auto;
+  gap: 0;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  align-items: center;
+}
+
+.DraconicEndeavors {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.DraconicEndeavorsInfo {
+  grid-column: span 3;
+  grid-row: span 1;
+  font-size: 3rem;
+}
+
+.DraconicEndeavors img {
+  clip-path: inset(50px 0 50px 0);
+  max-width: 100%;
+}
+
+/* footer */
+footer {
+  clear: both;
+  width: 100%;
+  height: auto;
+  display: flex;
+/*  border-top: 1px solid hsl(188, 77%, 41%); */
+  position: relative;
+  background-color: hsl(331, 77%, 98%);
+}
+
+.leftFooter {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+table {
+    border-spacing: 10px;
+    text-align: center;
+}
+
+th {
+  border-bottom: 2px solid hsl(331, 77%, 41%);
+  color: hsl(188, 31%, 25%);
+  line-height:.01rem;
+  text-align: center;
+}
+
+th h2 {
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+}
+
+td {
+  border-bottom: 1px solid hsl(188, 77%, 41%);
+  color: hsl(188, 31%, 25%);
+}
+
+.rightFooter {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 20px;
+  flex-direction: column;
+  color: hsl(168, 31%, 25%);
+}
+
+/* clicks & interacting */
+a, a:visited {
+  color: #111;
+}
+
+a:hover {
+  outline: 1px solid hsl(207, 77%, 21%);
+  border-radius: 5px;
+}
+
+/* responsive page design for smaller screens */
+@media (max-width: 768px) {
+  header, footer, .contact, .parent-container {
+    flex-direction: column;
+  }
+
+  footer {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+footer h2, .about h2, .openHours, .numberOfVendors, h2 {
+  font-size: 1.5rem;
+}
+.about p, .about li, .booths h3 {
+  font-size: 1rem;
+}
+footer td, .rightFooter p {
+  font-size: .75rem;
+}
+
+  .homePage {
+  display: grid;
+  grid-template-areas: "topLeft" 
+  "topRight"
+  "bottomLeft"
+  "bottomCenter"
+  "bottomRight";
+  width: 100%;
+  position: relative;
+  margin: auto;
+  gap: 0;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  align-items: center;
+}
+
+.topLeft, .topRight{
+  grid-column: span 1;
+  grid-row: span 4;
+}
+
+.bottomLeft, .bottomCenter, .bottomRight {
+  grid-column: span 1;
+  grid-row: span 4;
+}
+
+.booths {
+  grid-template-areas: "DraconicEndeavors" 
+  "DraconicEndeavorsInfo";
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+}
