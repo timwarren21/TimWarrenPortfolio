@@ -439,7 +439,7 @@ a:hover {
 }
 
 /* responsive page design for smaller screens */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   header, footer, .contact, .parent-container {
     flex-direction: column;
   }
